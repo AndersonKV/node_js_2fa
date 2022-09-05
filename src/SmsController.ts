@@ -10,6 +10,8 @@ const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioNumber = process.env.TWILIO_NUMBER;
 
+
+console.log({ twilioNumber })
 export class SmsController {
 
     async submit(req: Request, res: Response) {
@@ -19,13 +21,14 @@ export class SmsController {
         try {
             const client = new Twilio(String(accountSid), String(authToken));
 
-            client.messages
-                .create({
-                    from: twilioNumber,
-                    to: String(twilioNumber),
-                    body: "You just sent an SMS from TypeScript using Twilio!",
-                })
-                .then((message) => console.log(message.sid));
+            const response = await client.messages.create({
+                from: twilioNumber,
+                to: String(twilioNumber),
+                body: "You just sent an SMS from TypeScript using Twilio!",
+            })
+
+            console.log(response.sid)
+            return res.status(200).json({ success: true });
         } catch (err) {
             return res.status(400).json({ error: err.message });
         }
