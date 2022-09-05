@@ -1,9 +1,30 @@
+
+
+const uri = "mongodb+srv://bolafirme:bolafirme@cluster0.p2mkkj6.mongodb.net/?retryWrites=true&w=majority"
+
+
+
+
+
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const DATABASE = process.env.DATABASE;
+const MONGODB_URI = process.env.MONGODB_URI;
 
-import mongoose from "mongoose";
+const connect = async () => {
 
-mongoose.connect(`mongodb+srv://${DATABASE}:<password>@cluster0.p2mkkj6.mongodb.net/?retryWrites=true&w=majority`);
+    if (!MONGODB_URI) {
+        return;
+    }
+
+    try {
+        mongoose.connect(MONGODB_URI);
+        console.log('mongoose connected');
+    } catch (err) {
+        console.error(err);
+    }
+};
+
+export default { connect };
