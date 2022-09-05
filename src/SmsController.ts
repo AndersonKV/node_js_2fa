@@ -5,13 +5,11 @@ import { Twilio } from 'twilio';
 
 dotenv.config();
 
-
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioNumber = process.env.TWILIO_NUMBER;
 
 
-console.log({ twilioNumber })
 export class SmsController {
 
     async submit(req: Request, res: Response) {
@@ -23,14 +21,13 @@ export class SmsController {
 
             const response = await client.messages.create({
                 from: twilioNumber,
-                to: String(twilioNumber),
-                body: "You just sent an SMS from TypeScript using Twilio!",
+                to: `+${number}`,
+                body: "Seu código de autenticação é 555 666",
             })
 
-            console.log(response.sid)
-            return res.status(200).json({ success: true });
+            return res.status(201);
         } catch (err) {
-            return res.status(400).json({ error: err.message });
+            return res.status(400).json({ error: err });
         }
     }
 }
