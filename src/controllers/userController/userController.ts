@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
-import User from "../model/User";
-import { SendSMSService } from '../service/SendSMSService';
+import User from "../../model/User";
+import { SendSMSService } from '../../service/SendSMSService';
 
 export class UserController {
 
