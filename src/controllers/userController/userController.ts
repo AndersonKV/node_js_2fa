@@ -30,9 +30,7 @@ export class UserController {
     async find(req: Request, res: Response): Promise<Response> {
 
         try {
-
             const user = await User.find();
-            //const user = await User.deleteMany({});
             return res.status(201).json({ user });
         } catch (err) {
             return res.status(400).json({ error: err, message: err.message });
@@ -65,7 +63,6 @@ export class UserController {
 
     async delete(req: Request, res: Response): Promise<Response> {
         try {
-
             await User.deleteMany();
             return res.status(200).json();
         } catch (err) {
