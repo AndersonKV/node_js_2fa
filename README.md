@@ -3,16 +3,16 @@
 #Techs: node js, typescript, mongodb + mongoose, twilio</br>
 
 Api rest de autenticação de 2 fatores, foi utilizado o Twilio</br>
-para fazer o envio de sms para o celular</br>, objetivo de apenas aprender sobre o metodo
+para fazer o envio de sms para o celular, objetivo de apenas aprender sobre o metodo</br>
 
-Se quiser testar, faça o registro no site do twilio e utilize os dados no arquivo .env
+Se quiser testar, faça o registro no site do twilio e utilize os dados no arquivo .env</br>
 
-TWILIO_ACCOUNT_SID=TWILIO_ACCOUNT_SID
-TWILIO_AUTH_TOKEN=TWILIO_AUTH_TOKEN
-TWILIO_NUMBER=NUMERO_QUE_TWILIO_DA
-MONGODB_URI=MONGODB
+TWILIO_ACCOUNT_SID=TWILIO_ACCOUNT_SID</br>
+TWILIO_AUTH_TOKEN=TWILIO_AUTH_TOKEN</br>
+TWILIO_NUMBER=NUMERO_QUE_TWILIO_DA</br>
+MONGODB_URI=MONGODB</br>
 
-Se você conseguir logar é enviado os dados e o sms para o front e celular para verificação.
+Se você conseguir logar é enviado os dados e o sms para o front e celular para verificação.</br>
 
 Se o numero de envio de sms não for encontrado ele dispara um error</br>
 
