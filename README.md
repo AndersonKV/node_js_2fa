@@ -19,8 +19,8 @@ Se o numero de envio de sms não for encontrado ele dispara um error</br>
 Não tem nenhum validador além de checar se o a senha é igual ao email registro e email já foi registrado</br>
 
 
-post("/users/create")
-get("/users/find")
-post("/users/sign_in")
-delete("/delete/users")
+post("/users/create")</br>
+get("/users/find")</br>
+post("/users/sign_in")</br>
+delete("/delete/users")</br>
 
