@@ -1,6 +1,6 @@
 # node_js_2fa
 
-#Techs: node js, typescript, mongodb + mongoose, twilio</br>
+#Techs: node, typescript, mongodb + mongoose, twilio</br>
 
 Api rest de autenticação de 2 fatores, foi utilizado o Twilio</br>
 para fazer o envio de sms para o celular, objetivo de apenas aprender sobre o metodo</br>
